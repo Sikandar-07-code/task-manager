@@ -1,107 +1,68 @@
 
-Task Manager App
-Overview
-This is a Task Manager App with recurring task functionality. The app allows users to create, edit, delete, and view tasks, with support for recurring tasks. It has a clean, professional design with a clear and user-friendly interface. The app also includes advanced recurrence logic, such as "Every X interval" and "Nth weekday" options.
+📝 Task Manager
+A full-stack task manager app with support for recurring tasks and modern UI.
 
-Features
-Task Management
-CRUD Operations: Create, Read, Update, and Delete tasks.
+🚀 Features
+✅ Create, Edit, Delete Tasks
 
-Recurring Tasks: Supports recurring tasks with the following options:
+🔁 Recurring Tasks:
 
-Daily
+Daily / Weekly / Monthly / Yearly
 
-Weekly
+Every X days/weeks/months/years
 
-Monthly
-
-Yearly
-
-Custom Recurrence (Every X [interval] days, weeks, months, or years)
-
-Specific days of the week (e.g., Mon/Wed/Fri)
+Specific weekdays (e.g., Mon/Wed/Fri)
 
 Nth weekday of the month (e.g., 2nd Tuesday)
 
-User Interface
-Reusable Date Picker component for recurrence setup.
+📅 Custom Recurrence Options
 
-Visual Mini-Calendar preview for recurring dates.
+📆 Mini-calendar preview (optional)
 
-Technologies Used
-Frontend: Next.js, React, Tailwind CSS
+✨ Beautiful, clean UI with Tailwind CSS
 
-Backend: Node.js, Express.js, PostgreSQL
+🛠 Tech Stack
+Frontend: Next.js (App Router), Tailwind CSS
+
+Backend: Express.js
 
 Database: PostgreSQL
 
-State Management: React hooks
+State Management: Context API
 
-Form Handling: React forms for task creation and editing
+🧩 Code Structure
+components/TaskList.js – displays task list
 
-Getting Started
-1. Clone the Repository
+components/TaskModal.js – add/edit task
+
+components/RecurrenceForm.js – set recurrence rules
+
+backend/routes/tasks.js – Express routes
+
+⚙️ Setup Instructions
 bash
 Copy
 Edit
+# Clone the repo
 git clone https://github.com/your-username/task-manager.git
-2. Install Dependencies
-Navigate to the project directory:
 
-bash
-Copy
-Edit
+# Install frontend dependencies
 cd task-manager
-Install the frontend dependencies:
-
-bash
-Copy
-Edit
 npm install
-3. Set Up the Backend
-Navigate to the backend folder (if separate) or ensure the backend setup is inside the project directory.
 
-Install the backend dependencies:
+# Start frontend server
+npm run dev
 
-bash
-Copy
-Edit
+# Install backend dependencies (if separate)
 cd backend
 npm install
-4. Set Up the Database
-Ensure you have PostgreSQL installed and running. You can check if PostgreSQL is running on the default port (5432). If needed, update the database connection details in the backend config file (e.g., db.js).
-
-To create the necessary tables, run:
-
-bash
-Copy
-Edit
-psql -U your-username -d your-database-name -f database.sql
-Replace your-username, your-database-name, and database.sql with the actual details.
-
-5. Running the App
-Frontend (Next.js):
-To start the frontend, run:
-
-bash
-Copy
-Edit
 npm run dev
-This will start the frontend server on http://localhost:3000.
+🌍 Running the App
+Frontend: Open http://localhost:3000 in your browser.
 
-Backend (Node.js/Express):
-To start the backend server, run:
+Backend: Open http://localhost:5000 for API requests.
 
-bash
-Copy
-Edit
-npm run start
-This will start the backend server on http://localhost:5000.
-
-Endpoints
-The backend exposes the following endpoints:
-
-Tasks
+🔌 API Endpoints
 GET /tasks: Get all tasks
 
 GET /tasks/:id: Get a single task
@@ -112,9 +73,20 @@ PUT /tasks/:id: Update an existing task
 
 DELETE /tasks/:id: Delete a task
 
-Future Improvements
-Authentication: Add user authentication (e.g., login/signup).
+🔧 Database Setup
+Make sure PostgreSQL is installed and running. Use the following steps to set up the database:
 
-Advanced Filters: Allow users to filter tasks based on different criteria.
+Create a database:
 
-Push Notifications: Send reminders for recurring tasks.
+bash
+Copy
+Edit
+psql -U your-username -d your-database-name -f database.sql
+Update the database configuration in backend/db.js with your credentials.
+
+🚀 Future Enhancements
+User authentication (login/signup)
+
+Task filtering by status, date, etc.
+
+Push notifications for task reminders
